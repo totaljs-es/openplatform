@@ -16,6 +16,9 @@
 		:root {
 			--radius: 5px;
 		}
+		.panel { box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+		body { background-color: #F2F5FE; background: radial-gradient(circle at 12% 20%, rgb(107 211 255 / 12%), transparent 28%), radial-gradient(circle at 82% 8%, rgb(61 217 255 / 15%), transparent 32%), radial-gradient(circle at 52% 70%, rgba(255, 255, 255, 0.04), transparent 40%), #F2F5FE; min-height: 100vh; }
+		body::before { content: ""; position: fixed; inset: 0; background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px); background-size: 82px 82px; opacity: 0.18; pointer-events: none; z-index: 0; }
 		.button { border: 0; margin: 0; background-color: #E7E7E7; height: 40px; padding: 0 20px; color: #000; cursor: pointer; font-family: Arial; line-height: 34px; vertical-align: middle; outline: 0; font-size: 14px; text-decoration: none; transition: all 0.3s; width: 100%; }
 		.button i { width: 15px; text-align: center; margin-right: 5px; }
 		.button:hover { opacity: 0.8; }
@@ -35,7 +38,7 @@
 	<ui-component name="exec"></ui-component>
 	<ui-component name="errorhandler"></ui-component>
 
-	<ui-component name="viewbox" config="centered:1;parent:window" class="invisible">
+	<ui-component name="viewbox" config="centered:1;parent:window" class="invisible" style="position:relative">
 
 		<ui-bind path="common.page" config="show:value==='login'" style="display:block;max-width:300px;margin:0 auto;text-align:left" class="hidden">
 			<div class="panel">
