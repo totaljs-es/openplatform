@@ -55,7 +55,7 @@
 
 		exports.create = function() {
 			exports.permissions(function() {
-				SET('formgroup @default', {});
+				SET('formgroup @default', { permissions: [] });
 				SET('common.form', 'formgroup');
 			});
 		};
